@@ -1,0 +1,24 @@
+{
+  "onebot": {
+    "http_base": "http://127.0.0.1:3000",
+    "ws_url": "ws://127.0.0.1:3001",
+    "access_token": "pydemo_token_2024",
+    "timeout": 10
+  },
+  "behavior": {
+    "self_id": 0,
+    "reply_self": true,
+    "reply_delay_ms": 300,
+    "dedup_window": 500,
+    "log_file": "messages.jsonl",
+    "config_reload_seconds": 3
+  },
+  "rules": [
+    { "name": "ping", "match": "exact", "pattern": "ping", "reply": "pong" },
+    { "name": "help", "match": "contains", "pattern": "帮助", "reply": "可用指令：\n1) ping -> pong\n2) 帮助 -> 本菜单\n3) 时间 -> 当前时间\n4) 复读 <内容> -> 复读机\n5) calc 1+2 -> 加法" },
+    { "name": "time", "match": "exact", "pattern": "时间", "reply": "现在是 {now}" },
+    { "name": "echo", "match": "prefix", "pattern": "复读 ", "reply": "{1}" },
+    { "name": "calc", "match": "regex", "pattern": "^calc\\s+(\\d+)\\s*\\+\\s*(\\d+)$", "reply": "{1} + {2} = {sum}" }
+  ],
+  "fallback": { "enabled": false, "reply": "收到：{text}" }
+}

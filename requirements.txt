@@ -1,0 +1,4 @@
+# -*- coding: utf-8 -*-
+# 依赖：napcat.api 用 requests，napcat.events 用 websockets + requests
+requests>=2.28
+websockets>=13.0

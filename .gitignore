@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# 运行时产物
+messages.jsonl
+test_messages.jsonl
+*.log
+
+# IDE
+.vscode/
+.idea/
